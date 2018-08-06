@@ -5,8 +5,11 @@ dataset = dataset[2:3]
 
 # Fitting Decision Tree Regression to the dataset
 #install.packages('randomForest')
-library(rpart)
-regressor = rpart(formula = Salary ~ ., data = dataset, control = rpart.control(minsplit = 1))
+library(randomForest)
+set.seed(1234)
+regressor = randomForest( x = dataset[1], y = dataset$Salary, ntree = 500)
+
+
 
 # Predicting a new result
 y_pred = predict(regressor, data.frame(Level = 6.5))
