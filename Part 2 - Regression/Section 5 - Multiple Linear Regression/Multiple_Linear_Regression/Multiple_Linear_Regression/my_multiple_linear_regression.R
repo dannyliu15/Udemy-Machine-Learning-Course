@@ -31,9 +31,9 @@ set.seed(123)
 split = sample.split(dataset$Profit, SplitRatio = 0.8)
 training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
-#View(dataset)
-#View(training_set)
-#View(test_set)
+View(dataset)
+View(training_set)
+View(test_set)
 
 #Feature Scaling
 #The package will handle this
